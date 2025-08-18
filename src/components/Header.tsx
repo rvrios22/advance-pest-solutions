@@ -32,7 +32,7 @@ export default function Header() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent justify='end' className='hidden sm:flex gap-4'>
+      <NavbarContent justify="end" className="hidden sm:flex gap-4">
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
