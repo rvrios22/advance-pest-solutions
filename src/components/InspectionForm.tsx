@@ -14,7 +14,7 @@ function InspectionForm() {
   }
   return (
     <>
-      <h2 className="mt-4 mb-2 text-2xl text-center font-bold md:text-6xl">
+      <h2 className="mt-4 mb-2 text-2xl text-center font-bold md:text-4xl">
         Ready to Talk?
       </h2>
       <Form className="w-4/5 mx-auto" onSubmit={handleSubmit}>
