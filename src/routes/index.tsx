@@ -5,6 +5,7 @@ import truckSelfie from '/truckSelfie.webp'
 import InspectionButton from '@/components/InspectionButton'
 import pestLibrary from '../../public/pestLibrary'
 import PestCard from '@/components/PestCard'
+import InspectionForm from '@/components/InspectionForm'
 export const Route = createFileRoute('/')({
   component: App,
 })
@@ -27,11 +28,11 @@ function App() {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative flex justify-center mx-auto">
         <Image
           src={truck}
           alt="advance pest solutions truck"
-          className="border-1 border-[#e0e0e0] mt-4"
+          className="mt-4 h-[40dvh] object-cover"
         />
         <div className="absolute bottom-0 z-[10] flex flex-col gap-4 p-4">
           <h2 className="text-white text-xl font-bold font-outline text-pretty md:text-6xl">
@@ -113,6 +114,7 @@ function App() {
           link={link}
         />
       ))}
+      <InspectionForm />
     </>
   )
 }

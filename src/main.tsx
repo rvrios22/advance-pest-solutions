@@ -7,7 +7,7 @@ import { routeTree } from './routeTree.gen'
 
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
-import { HeroUIProvider } from '@heroui/react'
+import { HeroUIProvider, ToastProvider } from '@heroui/react'
 
 // Create a new router instance
 const router = createRouter({
@@ -33,6 +33,20 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <HeroUIProvider>
+        <ToastProvider
+          placement="bottom-center"
+          toastProps={{
+            timeout: 5000,
+            radius: 'md',
+            hideCloseButton: false,
+            classNames: {
+              title: 'text-white font-outline',
+              description: 'text-white font-outline',
+              base: 'bg-[#1c1c1c] bg-gradient-to-r from-amber-500 to-amber-600',
+              closeButton: 'opacity-100 absolute right-4 top-2',
+            },
+          }}
+        />
         <RouterProvider router={router} />
       </HeroUIProvider>
     </StrictMode>,
