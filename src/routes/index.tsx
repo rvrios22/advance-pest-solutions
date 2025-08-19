@@ -1,13 +1,30 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Image } from '@heroui/react'
-import truck from '../../public/truck.webp'
-import truckSelfie from '../../public/truckSelfie.webp'
+import { Card, CardBody, Image } from '@heroui/react'
+import truck from '/truck.webp'
+import truckSelfie from '/truckSelfie.webp'
 import InspectionButton from '@/components/InspectionButton'
+import pestLibrary from '../../public/pestLibrary'
+import PestCard from '@/components/PestCard'
 export const Route = createFileRoute('/')({
   component: App,
 })
 
 function App() {
+  const getUniquPests = (arr: any[], numberOfElements = 5) => {
+    if (!arr || arr.length === 0) {
+      return []
+    }
+    if (arr.length <= numberOfElements) {
+      return [...arr]
+    }
+    const shuffled = [...arr]
+    for (let i = 0; i < numberOfElements; i++) {
+      const randomIdx = i + Math.floor(Math.random() * (shuffled.length - i))
+      ;[shuffled[i], shuffled[randomIdx]] = [shuffled[randomIdx], shuffled[i]]
+    }
+    return shuffled.slice(0, numberOfElements)
+  }
+
   return (
     <>
       <div className="relative">
@@ -23,14 +40,14 @@ function App() {
           <InspectionButton />
         </div>
       </div>
-      <h2 className="text-white font-outline text-2xl text-center font-bold md:text-6xl">
+      <h2 className="mt-4 mb-2 text-2xl text-center font-bold md:text-6xl">
         About Us
       </h2>
       {/* image container to center on screen */}
-      <div className="w-full flex justify-center">
+      <div className="w-full mb-2 flex justify-center">
         <Image
           src={truckSelfie}
-          className="w-4/5 h-[50dvh] border-1 object-cover m-auto"
+          className="w-4/5  h-[50dvh] border-1 object-cover m-auto"
         />
       </div>
       <p className="w-4/5 m-auto font-medium">
@@ -55,7 +72,7 @@ function App() {
         Solutions combines expert techniques, reliable service, and neighborhood
         trust to deliver peace of mind and clean, safe environments.
       </p>
-      <h2 className="text-2xl w-4/5 m-auto text-center font-bold">
+      <h2 className="text-2xl w-4/5 mt-4 mx-auto text-center font-bold">
         We offer a vaeriety of services to suit{' '}
         <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
           YOUR
@@ -74,6 +91,28 @@ function App() {
       <p className="text-2xl w-4/5 m-auto text-center font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
         Mosquito
       </p>
+      <Card className="w-4/5 mt-4 mx-auto text-center text-white font-outline bg-gradient-to-r from-amber-500 to-amber-600">
+        <CardBody className="flex flex-col justify-center items-center gap-4 text-center text-pretty font-medium">
+          We aim to give you the best service for your individual needs
+          <InspectionButton />
+        </CardBody>
+      </Card>
+      <h2 className="text-2xl text-center font-bold mt-4 mb-2 md:text-6xl">
+        Pests We're{' '}
+        <span className="text-2xl w-4/5 m-auto text-center font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
+          EXPERTS
+        </span>{' '}
+        At
+      </h2>
+      {getUniquPests(pestLibrary).map(({ name, img, link }) => (
+        <PestCard
+          key={`${name}-${img}`}
+          name={name}
+          alt={name}
+          src={img}
+          link={link}
+        />
+      ))}
     </>
   )
 }
