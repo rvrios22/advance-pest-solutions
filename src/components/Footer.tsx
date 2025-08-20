@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center font-medium">
+    <footer className="pb-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center font-medium">
       <div>
         <h3 className="text-3xl mb-2 mt-4 pt-4">Contact Us</h3>
         <p>Phone: 1-760-343-8622</p>

@@ -22,15 +22,17 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+      <NavbarContent justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit lg:text-2xl">
-            Advance Pest Solutions
-          </p>
+          <Link to="/">
+            <p className="font-bold text-inherit lg:text-2xl">
+              Advance Pest Solutions
+            </p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 

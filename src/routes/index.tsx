@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <>
+    <main>
       <div className="relative flex justify-center mx-auto max-w-[1200px]">
         <Image
           src={truck}
@@ -130,6 +130,6 @@ function App() {
         ))}
       </div>
       <InspectionForm />
-    </>
+    </main>
   )
 }
