@@ -36,7 +36,7 @@ if (rootElement && !rootElement.innerHTML) {
         <ToastProvider
           placement="bottom-center"
           toastProps={{
-            timeout: 50000,
+            timeout: 5000,
             radius: 'md',
             hideCloseButton: false,
             classNames: {
