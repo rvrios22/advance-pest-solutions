@@ -16,12 +16,11 @@ export const Route = createFileRoute('/pests/$pestName')({
 
 function RouteComponent() {
   const loaderData = useLoaderData({ from: '/pests/$pestName' })
-  console.log(loaderData?.name)
   return (
     <main className="min-h-screen">
       <div className="flex justify-center m-auto">
         <Image
-          className={`object-cover border-1 border-gray-200 ${loaderData?.name.toLowerCase() === 'ants'  ? 'object-top' : loaderData?.name.toLowerCase() === 'scorpions' ? 'object-bottom' : ''}`}
+          className={`object-cover border-1 border-gray-200 ${loaderData?.name.toLowerCase() === 'ants' ? 'object-top' : loaderData?.name.toLowerCase() === 'scorpions' ? 'object-bottom' : ''}`}
           src={loaderData?.img}
           width={window.innerWidth * 0.8}
           height={
