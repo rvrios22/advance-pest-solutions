@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PestsIndexRouteImport } from './routes/pests/index'
+import { Route as PestsPestNameRouteImport } from './routes/pests/$pestName'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const PestsIndexRoute = PestsIndexRouteImport.update({
   path: '/pests/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PestsPestNameRoute = PestsPestNameRouteImport.update({
+  id: '/pests/$pestName',
+  path: '/pests/$pestName',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/pests/$pestName': typeof PestsPestNameRoute
   '/pests': typeof PestsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/pests/$pestName': typeof PestsPestNameRoute
   '/pests': typeof PestsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/pests/$pestName': typeof PestsPestNameRoute
   '/pests/': typeof PestsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pests'
+  fullPaths: '/' | '/pests/$pestName' | '/pests'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pests'
-  id: '__root__' | '/' | '/pests/'
+  to: '/' | '/pests/$pestName' | '/pests'
+  id: '__root__' | '/' | '/pests/$pestName' | '/pests/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PestsPestNameRoute: typeof PestsPestNameRoute
   PestsIndexRoute: typeof PestsIndexRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PestsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pests/$pestName': {
+      id: '/pests/$pestName'
+      path: '/pests/$pestName'
+      fullPath: '/pests/$pestName'
+      preLoaderRoute: typeof PestsPestNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PestsPestNameRoute: PestsPestNameRoute,
   PestsIndexRoute: PestsIndexRoute,
 }
 export const routeTree = rootRouteImport

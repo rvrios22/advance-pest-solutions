@@ -12,7 +12,8 @@ import {
   DropdownItem,
   NavbarMenuToggle,
 } from '@heroui/react'
-import { Link } from '@tanstack/react-router'
+import { Link, useRouter } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import InspectionButton from './InspectionButton'
 import { ChevronDown } from 'lucide-react'
 import pestLibrary from '../../public/pestLibrary'
@@ -20,8 +21,14 @@ import { useState } from 'react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const router = useRouter()
+  useEffect(() => {
+    const unsubscribe = router.history.subscribe(() => setIsMenuOpen(false))
+
+    return () => unsubscribe()
+  }, [router])
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -53,7 +60,11 @@ export default function Header() {
           </NavbarItem>
           <DropdownMenu>
             {pestLibrary.map((pest, idx) => (
-              <DropdownItem key={`${pest}-${idx}`}>{pest.name}</DropdownItem>
+              <DropdownItem key={`${pest}-${idx}`}>
+                <Link to={pest.link} className="w-full">
+                  <p>{pest.name}</p>
+                </Link>
+              </DropdownItem>
             ))}
           </DropdownMenu>
         </Dropdown>

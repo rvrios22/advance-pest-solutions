@@ -11,7 +11,7 @@ export const Route = createFileRoute('/')({
 })
 
 function App() {
-  const getUniquPests = (arr: any[], numberOfElements = 5) => {
+  const getUniquPests = (arr: any[], numberOfElements = 6) => {
     if (!arr || arr.length === 0) {
       return []
     }
@@ -105,7 +105,13 @@ function App() {
       <p className="text-2xl w-4/5 m-auto text-center font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent md:text-3xl">
         Mosquito
       </p>
-      <Card className="border-1 border-gray-200 w-4/5 mt-4 mx-auto text-center text-white font-outline bg-gradient-to-r from-amber-500 to-amber-600">
+      <Card
+        className="border-1 border-gray-200 w-4/5 mt-4 mx-auto text-center text-white font-outline "
+        style={{
+          backgroundImage:
+            'linear-gradient(300deg, #2563eb, #fff, #dc2626 95%)',
+        }}
+      >
         <CardBody className="flex flex-col justify-center items-center gap-4 text-center text-pretty font-medium md:text-xl lg:text-2xl">
           We aim to give you the best service for your individual needs
           <InspectionButton />
