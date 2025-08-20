@@ -71,7 +71,7 @@ function App() {
           plans—short-term and long-term pest control in Indio CA and all cities
           surrounding —are designed to match your schedule and budget with
           effective coverage. We specialize in safe insect control and rodent
-          control in Indio Ca. and all cities surrounding, applying
+          control in Indio CA. and all cities surrounding, applying
           industry-standard products with a focus on safety, thorough
           eradication, and prevention of future outbreaks Serving both homes and
           businesses, our comprehensive solutions for residential and commercial
