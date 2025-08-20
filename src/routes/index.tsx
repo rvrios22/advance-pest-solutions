@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { Card, CardBody, Image } from '@heroui/react'
 import truck from '/truck.webp'
 import truckSelfie from '/truckSelfie.webp'
@@ -135,6 +135,9 @@ function App() {
           />
         ))}
       </div>
+      <Link className="text-center" to="/pests">
+        <p className="text-center font-bold underline md:text-lg lg:text-xl">See More</p>
+      </Link>
       <InspectionForm />
     </main>
   )
