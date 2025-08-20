@@ -36,13 +36,13 @@ if (rootElement && !rootElement.innerHTML) {
         <ToastProvider
           placement="bottom-center"
           toastProps={{
-            timeout: 5000,
+            timeout: 50000,
             radius: 'md',
             hideCloseButton: false,
             classNames: {
-              title: 'text-white font-outline',
-              description: 'text-white font-outline',
-              base: 'bg-[#1c1c1c] bg-gradient-to-r from-amber-500 to-amber-600',
+              title: 'text-white text-lg',
+              description: 'text-white text-base',
+              base: 'bg-gradient-to-r from-amber-500 to-amber-600',
               closeButton: 'opacity-100 absolute right-4 top-2',
             },
           }}

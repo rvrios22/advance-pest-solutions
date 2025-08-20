@@ -28,7 +28,9 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">Advance Pest Solutions</p>
+          <p className="font-bold text-inherit lg:text-2xl">
+            Advance Pest Solutions
+          </p>
         </NavbarBrand>
       </NavbarContent>
 
@@ -38,7 +40,7 @@ export default function Header() {
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent lg:text-xl"
                 endContent={<ChevronDown />}
                 radius="sm"
                 variant="light"

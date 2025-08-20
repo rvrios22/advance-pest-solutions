@@ -17,6 +17,10 @@ code {
     monospace;
 }
 
+#inspection-form {
+  scroll-margin-top: 150px;
+}
+
 @layer base {
   .font-outline {
     text-shadow:

@@ -32,7 +32,7 @@ function App() {
         <Image
           src={truck}
           alt="advance pest solutions truck"
-          className="mt-4 object-cover"
+          className="mt-4 object-cover border-1 border-gray-200"
           width={window.innerWidth}
         />
         <div className="absolute bottom-0 left-[2%] z-[10] flex flex-col gap-4 p-4">
@@ -50,7 +50,7 @@ function App() {
         <div className="w-4/5 mx-auto mb-2 flex justify-center lg:w-auto">
           <Image
             src={truckSelfie}
-            className="border-1 object-cover m-auto"
+            className="border-1 border-gray-200 object-cover m-auto"
             width={window.innerWidth * 0.8}
             height={window.innerHeight * 0.5}
           />
@@ -105,8 +105,8 @@ function App() {
       <p className="text-2xl w-4/5 m-auto text-center font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent md:text-3xl">
         Mosquito
       </p>
-      <Card className="w-4/5 mt-4 mx-auto text-center text-white font-outline bg-gradient-to-r from-amber-500 to-amber-600">
-        <CardBody className="flex flex-col justify-center items-center gap-4 text-center text-pretty font-medium md:text-xl">
+      <Card className="border-1 border-gray-200 w-4/5 mt-4 mx-auto text-center text-white font-outline bg-gradient-to-r from-amber-500 to-amber-600">
+        <CardBody className="flex flex-col justify-center items-center gap-4 text-center text-pretty font-medium md:text-xl lg:text-2xl">
           We aim to give you the best service for your individual needs
           <InspectionButton />
         </CardBody>
@@ -118,7 +118,7 @@ function App() {
         </span>{' '}
         At
       </h2>
-      <div className=" md: grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="md: grid md:grid-cols-2 lg:grid-cols-3">
         {getUniquPests(pestLibrary).map(({ name, img, link }) => (
           <PestCard
             key={`${name}-${img}`}

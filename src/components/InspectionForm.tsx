@@ -9,7 +9,7 @@ function InspectionForm() {
     addToast({
       title: 'We receieved your message!',
       description: "We'll be in contact to schedule as soon as possible.",
-      icon: <Bug  />,
+      icon: <Bug />,
     })
   }
   return (
@@ -17,7 +17,7 @@ function InspectionForm() {
       <h2 className="mt-4 mb-2 text-2xl text-center font-bold md:text-4xl">
         Ready to Talk?
       </h2>
-      <Form className="w-4/5 mx-auto" onSubmit={handleSubmit}>
+      <Form className="w-4/5 mx-auto lg:text-lg" onSubmit={handleSubmit} id='inspection-form'>
         <Input
           isRequired
           label="Name"
@@ -50,15 +50,11 @@ function InspectionForm() {
           className="mb-4 mx-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 
                 text-white font-semibold rounded-md shadow-md 
                 transition-transform duration-200 ease-in-out 
-                hover:scale-105 max-w-fit"
+                hover:scale-105 max-w-fit lg:text-lg"
         >
           Submit
         </Button>
       </Form>
-      <p className="font-medium text-center w-4/5 mx-auto text-pretty">
-        Fill out the form above and we will reach out to you as soon as possible
-        to schedule a FREE consultation.
-      </p>
     </>
   )
 }
