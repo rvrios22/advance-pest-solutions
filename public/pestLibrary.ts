@@ -21,7 +21,7 @@ const pestLibrary = [
         control: 'To control beetle infestations, pest control professionals typically start by identifying the specific beetle species and locating the source of the problem. For beetles infesting stored products, removing infested food items and thoroughly cleaning storage areas is essential. Insecticidal sprays or dusts may be used in cracks, crevices, or directly on affected areas. For wood-boring beetles, treatment may involve injecting insecticides into wood or using fumigation in severe cases. Preventative strategies include sealing entry points, reducing moisture, and regularly inspecting susceptible items or areas. Integrated Pest Management (IPM) approaches are often employed to combine chemical, physical, and environmental methods for long-term control.'
     },
     {
-        name: 'Cockroachs',
+        name: 'Cockroaches',
         img: '/cockroach.webp',
         link: '/pests/cockroach',
         desc: 'Cockroaches are resilient insects belonging to the order Blattodea, with around 4,600 known species, though only a few are common household pests. These pests are typically reddish-brown or black, with flat, oval-shaped bodies and long antennae. Cockroaches are nocturnal and thrive in warm, humid environments, often hiding in kitchens, bathrooms, and other areas with access to food and water. They are known for their ability to survive in harsh conditions and can pose health risks by spreading bacteria and allergens through their droppings and shed skin.',
