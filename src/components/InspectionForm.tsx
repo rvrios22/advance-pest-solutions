@@ -5,7 +5,7 @@ import { Bug } from 'lucide-react'
 import useScrollStore from '../store/scrollStore' // Import your store
 
 const InspectionForm = React.forwardRef<HTMLFormElement, {}>(
-  (props, externalRef) => {
+  () => {
     const formRef = useRef<HTMLFormElement>(null)
     const setInspectionFormRef = useScrollStore(
       (state) => state.setInspectionFormRef,
