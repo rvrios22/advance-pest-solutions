@@ -1,23 +1,41 @@
+// src/components/InspectionForm.tsx
+import React, { useEffect, useRef } from 'react' // Add useEffect
 import { Form, Button, Input, Textarea, addToast } from '@heroui/react'
 import { Bug } from 'lucide-react'
+import useScrollStore from '../store/scrollStore' // Import your store
 
-function InspectionForm() {
-  interface InspectionFormEvent extends React.FormEvent<HTMLFormElement> {}
+const InspectionForm = React.forwardRef<HTMLFormElement, {}>(
+  (props, externalRef) => {
+    const formRef = useRef<HTMLFormElement>(null)
+    const setInspectionFormRef = useScrollStore(
+      (state) => state.setInspectionFormRef,
+    )
 
-  const handleSubmit = (e: InspectionFormEvent): void => {
-    e.preventDefault()
-    addToast({
-      title: 'We receieved your message!',
-      description: "We'll be in contact to schedule as soon as possible.",
-      icon: <Bug />,
-    })
-  }
-  return (
-    <>
-      <h2 className="mt-4 mb-2 text-2xl text-center font-bold md:text-4xl">
-        Ready to Talk?
-      </h2>
-      <Form className="w-4/5 mx-auto lg:text-lg" onSubmit={handleSubmit} id='inspection-form'>
+    useEffect(() => {
+      if (formRef.current) {
+        //@ts-ignore
+        setInspectionFormRef(formRef)
+      }
+    }, [setInspectionFormRef])
+
+    interface InspectionFormEvent extends React.FormEvent<HTMLFormElement> {}
+
+    const handleSubmit = (e: InspectionFormEvent): void => {
+      e.preventDefault()
+      addToast({
+        title: 'We receieved your message!',
+        description: "We'll be in contact to schedule as soon as possible.",
+        icon: <Bug />,
+      })
+    }
+
+    return (
+      <Form
+        className="w-4/5 mx-auto lg:text-lg"
+        onSubmit={handleSubmit}
+        id="inspection-form"
+        ref={formRef}
+      >
         <Input
           isRequired
           label="Name"
@@ -47,16 +65,18 @@ function InspectionForm() {
         />
         <Button
           type="submit"
-          className="mb-4 mx-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 
-                text-white font-semibold rounded-md shadow-md 
-                transition-transform duration-200 ease-in-out 
+          className="mb-4 mx-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600
+                text-white font-semibold rounded-md shadow-md
+                transition-transform duration-200 ease-in-out
                 hover:scale-105 max-w-fit lg:text-lg"
         >
           Submit
         </Button>
       </Form>
-    </>
-  )
-}
+    )
+  },
+)
+
+InspectionForm.displayName = 'InspectionForm'
 
 export default InspectionForm

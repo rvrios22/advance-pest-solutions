@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import pestLibrary from '../../../public/pestLibrary'
 import PestCard from '@/components/PestCard'
+import InspectionForm from '@/components/InspectionForm'
 export const Route = createFileRoute('/pests/')({
   component: RouteComponent,
 })
@@ -25,6 +26,7 @@ function RouteComponent() {
           />
         ))}
       </div>
+      <InspectionForm />
     </main>
   )
 }
