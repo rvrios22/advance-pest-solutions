@@ -12,6 +12,7 @@ import {
   DropdownItem,
   NavbarMenuToggle,
 } from '@heroui/react'
+import { DropdownItemLink } from '@/routes/__root'
 import { Link, useRouter } from '@tanstack/react-router'
 import { useEffect } from 'react'
 import InspectionButton from './InspectionButton'
@@ -60,8 +61,8 @@ export default function Header() {
           </NavbarItem>
           <DropdownMenu>
             {pestLibrary.map((pest, idx) => (
-              <DropdownItem key={`${pest}-${idx}`}>
-                <Link to={pest.link} className="w-full">
+              <DropdownItem key={`${pest}-${idx}`} className='p-0 my-1.5'>
+                <Link to={pest.link}>
                   <p>{pest.name}</p>
                 </Link>
               </DropdownItem>
