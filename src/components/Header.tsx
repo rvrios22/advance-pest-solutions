@@ -61,11 +61,11 @@ export default function Header() {
           </NavbarItem>
           <DropdownMenu>
             {pestLibrary.map((pest, idx) => (
-              <DropdownItem key={`${pest}-${idx}`} className='p-0 my-1.5'>
+              <DropdownItemLink key={`${pest}-${idx}`} to={pest.link}>
                 <Link to={pest.link}>
                   <p>{pest.name}</p>
                 </Link>
-              </DropdownItem>
+              </DropdownItemLink>
             ))}
           </DropdownMenu>
         </Dropdown>
