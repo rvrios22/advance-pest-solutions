@@ -15,7 +15,7 @@ function PestCard({ src, alt, link, name }: PestCard) {
           <CardBody className="p-0 ">
             <Image
               src={src}
-              alt={alt}
+              alt={`Picture of a ${alt} species`}
               className="object-cover"
               height={window.innerHeight * 0.3}
               width={window.innerWidth * 0.8}

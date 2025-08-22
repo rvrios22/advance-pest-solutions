@@ -25,7 +25,7 @@ const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
     }
   }, [setInspectionFormRef])
 
-  interface InspectionFormEvent extends React.FormEvent<HTMLFormElement> {}
+  
 
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })

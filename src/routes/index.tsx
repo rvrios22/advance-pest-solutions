@@ -49,6 +49,7 @@ function App() {
         {/* image container to center on screen */}
         <div className="w-4/5 mx-auto mb-2 flex justify-center lg:w-auto">
           <Image
+            alt="Owner of Advance Pest Solutions"
             src={truckSelfie}
             className="border-1 border-gray-200 object-cover m-auto"
             width={window.innerWidth * 0.8}
@@ -136,7 +137,9 @@ function App() {
         ))}
       </div>
       <Link className="text-center" to="/pests">
-        <p className="text-center font-bold underline md:text-lg lg:text-xl">See More</p>
+        <p className="text-center font-bold underline md:text-lg lg:text-xl">
+          Click Here To See More
+        </p>
       </Link>
       <InspectionForm />
     </main>
