@@ -6,7 +6,7 @@ import useScrollStore from '../store/scrollStore' // Import your store
 import { useForm } from '@formspree/react'
 
 const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
-  const [state, handleSubmit] = useForm('xanbrnro')
+  const [state, handleSubmit] = useForm('mzzvndbj')
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -59,9 +59,6 @@ const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
     <Form
       className="w-4/5 mx-auto lg:text-lg"
       onSubmit={handleSubmit}
-      action="https://formspree.io/f/xanbrnro"
-      method="post"
-      id="inspection-form"
       ref={formRef}
     >
       <Input
