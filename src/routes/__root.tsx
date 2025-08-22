@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 
 export const Link = createLink(HeroUILink)
 export const DropdownItemLink = createLink(DropdownItem)
+
 export const Route = createRootRoute({
   component: () => (
     <>
