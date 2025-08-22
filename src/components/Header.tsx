@@ -46,19 +46,17 @@ export default function Header() {
 
       <NavbarContent justify="end" className="hidden sm:flex gap-4">
         <Dropdown>
-          <NavbarItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent lg:text-xl"
-                endContent={<ChevronDown />}
-                radius="sm"
-                variant="light"
-              >
-                Pest Library
-              </Button>
-            </DropdownTrigger>
-          </NavbarItem>
+          <DropdownTrigger>
+            <Button
+              disableRipple
+              className="p-0 bg-transparent data-[hover=true]:bg-transparent lg:text-xl"
+              endContent={<ChevronDown />}
+              radius="sm"
+              variant="light"
+            >
+              Pest Library
+            </Button>
+          </DropdownTrigger>
           <DropdownMenu>
             {pestLibrary.map((pest, idx) => (
               <DropdownItemLink key={`${pest}-${idx}`} to={pest.link}>
