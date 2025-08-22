@@ -45,8 +45,8 @@ export default function Header() {
       </NavbarContent>
 
       <NavbarContent justify="end" className="hidden sm:flex gap-4">
-        <Dropdown>
-          <NavbarItem>
+        <NavbarItem>
+          <Dropdown>
             <DropdownTrigger>
               <Button
                 disableRipple
@@ -58,18 +58,15 @@ export default function Header() {
                 Pest Library
               </Button>
             </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu>
-            {pestLibrary.map((pest, idx) => (
-              <DropdownItemLink
-                key={`${pest}-${idx}`}
-                to={pest.link}
-              >
-                {pest.name}
-              </DropdownItemLink>
-            ))}
-          </DropdownMenu>
-        </Dropdown>
+            <DropdownMenu>
+              {pestLibrary.map((pest, idx) => (
+                <DropdownItemLink key={`${pest}-${idx}`} to={pest.link}>
+                  {pest.name}
+                </DropdownItemLink>
+              ))}
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
         <NavbarItem>
           <InspectionButton />
         </NavbarItem>
