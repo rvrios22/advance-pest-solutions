@@ -56,62 +56,68 @@ const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
     }
   }, [state.succeeded, state.errors])
   return (
-    <Form
-      className="w-4/5 mx-auto lg:text-lg"
-      onSubmit={handleSubmit}
-      ref={formRef}
-    >
-      <Input
-        isRequired
-        onChange={handleChange}
-        value={formData.name}
-        name="name"
-        label="Name"
-        labelPlacement="inside"
-        isClearable
-        type="text"
-      />
-      <Input
-        isRequired
-        onChange={handleChange}
-        value={formData.phone}
-        name="phone"
-        label="Phone Number"
-        labelPlacement="inside"
-        isClearable
-        type="tel"
-      />
-      <Input
-        isRequired
-        onChange={handleChange}
-        value={formData.email}
-        name="email"
-        label="Email"
-        labelPlacement="inside"
-        isClearable
-        type="email"
-      />
-      <Textarea
-        isRequired
-        onChange={handleChange}
-        value={formData.desc}
-        name="desc"
-        label="How Can We Help?"
-        labelPlacement="inside"
-        description="Let us know what pest issues you have so we can assist you"
-      />
-      <Button
-        isLoading={state.submitting}
-        disabled={state.submitting}
-        type="submit"
-        className="mb-4 mx-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600
-                text-white font-semibold rounded-md shadow-md
-                transition-transform duration-200 ease-in-out
-                hover:scale-105 max-w-fit lg:text-lg"
+    <>
+      <h2 className="mt-4 mb-2 text-2xl text-center font-bold md:text-5xl">
+        Ready to Talk?
+      </h2>
+      <Form
+        className="w-4/5 mx-auto lg:text-lg"
+        onSubmit={handleSubmit}
+        ref={formRef}
+        id="inspection-form"
       >
-        Submit
-      </Button>
-    </Form>
+        <Input
+          isRequired
+          onChange={handleChange}
+          value={formData.name}
+          name="name"
+          label="Name"
+          labelPlacement="inside"
+          isClearable
+          type="text"
+        />
+        <Input
+          isRequired
+          onChange={handleChange}
+          value={formData.phone}
+          name="phone"
+          label="Phone Number"
+          labelPlacement="inside"
+          isClearable
+          type="tel"
+        />
+        <Input
+          isRequired
+          onChange={handleChange}
+          value={formData.email}
+          name="email"
+          label="Email"
+          labelPlacement="inside"
+          isClearable
+          type="email"
+        />
+        <Textarea
+          isRequired
+          onChange={handleChange}
+          value={formData.desc}
+          name="desc"
+          label="How Can We Help?"
+          labelPlacement="inside"
+          description="Let us know what pest issues you have so we can assist you"
+        />
+        <Button
+          isLoading={state.submitting}
+          disabled={state.submitting}
+          type="submit"
+          className="mb-4 mx-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600
+        text-white font-semibold rounded-md shadow-md
+        transition-transform duration-200 ease-in-out
+        hover:scale-105 max-w-fit lg:text-lg"
+        >
+          Submit
+        </Button>
+      </Form>
+    </>
   )
 })
 
