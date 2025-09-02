@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
+import type { NavigateOptions, ToOptions } from '@tanstack/react-router'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
 // Import the generated route tree
@@ -26,13 +27,23 @@ declare module '@tanstack/react-router' {
   }
 }
 
+declare module '@react-types/shared' {
+  interface RouterConfig {
+    href: ToOptions['to']
+    routerOptions: Omit<NavigateOptions, keyof ToOptions>
+  }
+}
+
 // Render the app
 const rootElement = document.getElementById('app')
 if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <HeroUIProvider>
+      <HeroUIProvider
+        navigate={(to, options) => router.navigate({ to, ...options })}
+        useHref={(to) => router.buildLocation({ to }).href}
+      >
         <ToastProvider
           placement="bottom-center"
           toastProps={{
