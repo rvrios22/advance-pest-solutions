@@ -1,3 +1,6 @@
+import facebook from '../../public/facebook.svg'
+import instagram from '../../public/instagram.svg'
+
 function Footer() {
   return (
     <footer className="pb-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center font-medium px-4">
@@ -26,14 +29,14 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./facebook.svg" alt="Facebook" width={40} />
+            <img src={facebook} alt="Facebook" width={35} />
           </a>
           <a
             href="https://www.instagram.com/advancepestsolutions/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./instagram.svg" alt="Instagram" width={40} />
+            <img src={instagram} alt="Instagram" width={40} />
           </a>
           {/* <a href="http://" target="_blank" rel="noopener noreferrer">
             <img src="./google.svg" alt="Google" width={40} />
