@@ -1,10 +1,15 @@
 function Footer() {
   return (
-    <footer className="pb-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center font-medium">
+    <footer className="pb-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center font-medium px-4">
       <div>
-        <h3 className="text-3xl mb-2 mt-4 pt-4">Contact Us</h3>
+        <h3 className="text-3xl mb-2 mt-4 pt-4 ">Contact Us</h3>
         <p>Phone: 1-760-343-8622</p>
-        <p>Email: dionicio.madrid@advancepestsolutions.net</p>
+        <p className="break-words">
+          Email: <br />
+          <span className="text-sm md:text-base">
+            dionicio.madrid@advancepestsolutions.net
+          </span>
+        </p>
         <p>Address: Indio, CA</p>
       </div>
       <div>
