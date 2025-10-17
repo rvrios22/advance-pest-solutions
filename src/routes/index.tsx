@@ -28,12 +28,13 @@ function App() {
 
   return (
     <main>
-      <div className="relative flex justify-center mx-auto max-w-[1200px]">
+      <div className="relative flex justify-center mx-auto max-w-[1200px] aspect-video object-cover">
         <Image
           src={truck}
           alt="advance pest solutions truck"
           className="mt-4 object-cover border-1 border-gray-200"
-          width={window.innerWidth}
+          width={1200}
+          // height={2364}
         />
         <div className="absolute bottom-0 left-[2%] z-[10] flex flex-col gap-4 p-4">
           <h2 className="text-white text-xl font-bold font-outline text-pretty md:text-5xl">
@@ -47,20 +48,19 @@ function App() {
       </h2>
       <div className="lg:grid lg:grid-cols-2 lg:w-4/5 lg:m-auto lg:gap-4">
         {/* image container to center on screen */}
-        <div className="w-4/5 mx-auto mb-2 flex justify-center lg:w-auto">
+        <div className="max-h-[578px] overflow-clip w-4/5 mx-auto mb-2 flex justify-center lg:w-full aspect-square">
           <Image
             alt="Owner of Advance Pest Solutions"
             src={truckSelfie}
-            className="border-1 border-gray-200 object-cover m-auto"
-            width={window.innerWidth * 0.8}
-            height={window.innerHeight * 0.5}
+            className="border-1 border-gray-200 m-auto"
+            width={800}
           />
         </div>
         <p
-          className="w-4/5 m-auto font-medium lg:w-auto lg:mt-0 lg:text-lg lg:overflow-y-scroll"
+          className="w-4/5 lg:max-h-[578px] m-auto font-medium lg:w-auto lg:mt-0 lg:text-lg lg:overflow-y-scroll"
           style={{
             height:
-              window.innerWidth >= 1024 ? window.innerHeight * 0.5 : 'auto',
+              window.innerWidth >= 1024 ? window.innerWidth * 0.8 * 0.5 : 'auto',
           }}
         >
           At Advance Pest Solutions in Indio, CA, we offer tailored protection
