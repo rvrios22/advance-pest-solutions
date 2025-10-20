@@ -1,11 +1,11 @@
 // src/components/InspectionForm.tsx
-import React, { useEffect, useState, useRef } from 'react' // Add useEffect
+import { useEffect, useState, useRef } from 'react'
 import { Form, Button, Input, Textarea, addToast } from '@heroui/react'
 import { Bug } from 'lucide-react'
-import useScrollStore from '../store/scrollStore' // Import your store
+import useScrollStore from '../store/scrollStore' 
 import { useForm } from '@formspree/react'
 
-const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
+function InspectionForm() {
   const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_ID)
   const [formData, setFormData] = useState({
     name: '',
@@ -24,8 +24,6 @@ const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
       setInspectionFormRef(formRef)
     }
   }, [setInspectionFormRef])
-
-  
 
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -119,7 +117,7 @@ const InspectionForm = React.forwardRef<HTMLFormElement, {}>(() => {
       </Form>
     </>
   )
-})
+}
 
 InspectionForm.displayName = 'InspectionForm'
 
